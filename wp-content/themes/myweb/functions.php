@@ -250,7 +250,7 @@ add_action('admin_head', 'my_custom_fonts');
 function my_custom_fonts() {
   echo '<style>
 	#menu-media, #menu-comments, #menu-appearance, #menu-plugins, #menu-tools, #menu-settings, #toplevel_page_edit-post_type-acf {
-		display: none;
+		/*display: none;*/
 	}
   </style>';
 }

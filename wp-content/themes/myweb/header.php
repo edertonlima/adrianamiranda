@@ -20,36 +20,14 @@
 
 <?php get_header(); ?>
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css" media="screen" />
 
 <!-- JQUERY -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-<!-- CSS SELECT2-->
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/select2.min.css" media="screen" />
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/select2.min.js"></script>
-
-<!-- FILE STYLE -->
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/bootstrap-filestyle.min.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/owl.carousel.min.js"></script>
 
 <script type="text/javascript">
-
-	/* MENU FIXED */
-	var position = '';
-	function menuFixed(position){		
-		if(position > 1){
-			jQuery('.header-menu').addClass('menu-fixed');
-		}else{
-			jQuery('.header-menu').removeClass('menu-fixed');
-		}
-	}
 
 	$(document).ready(function(){
 
@@ -65,75 +43,61 @@
 			}
 		});
 
-		/* SUB MENU */
-		$('.menu-item-has-children a').click(function(){
-			$('.sub-menu').toggle();
-		});
-
-		/* SELECT */
-		/* SELECT2 */
-		$("select").select2({
-			minimumResultsForSearch: 200
-		});
-
-		/* FILE STYLE */
-		$("input").filestyle({buttonText: "Selecionar"});
-
-		/* MENU FIXED */
-		position = jQuery(window).scrollTop();
-    	menuFixed(position);
-	    jQuery(window).scroll(function(){
-	    	position = jQuery(window).scrollTop();
-	    	menuFixed(position);
-	    });
-
 	});	
 
 </script>
 
 </head>
-<body>
+<body class="home">
+
 	<header class="header">
-		<session class="top-menu">
-			<div class="header-menu">
-				<div class="container">
-					<a href="javascript:" class="menu-mobile"><span><em>X</em></span></a>
-					<h1>
-						<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/toplog.png" alt="Toplog"></a>
-					</h1>
-				</div>
-			</div>			
-				
-			<?php 
+		<nav class="nav">
+			<div class="container">
+				<ul class="menu">
+					<li class="ativo"><a href="<?php echo get_home_url(); ?>" title="HOME">HOME</a></li>
+					<li>
+						<a href="javascript://" title="">CATEGORIAS <i class="fa fa-angle-down"></i></a>
 
-				$pt = 'style="display: inline-block;"';
-				$en = 'style="display: inline-block;"';
-				$es = 'style="display: inline-block;"';
+						<ul>
 
-				if(qtrans_getLanguage() == 'pt'){
-					$pt = 'style="display: none;"';
-				}
+							<?php
+								$args = array(
+								    'taxonomy'      => 'category',
+								    'parent'        => 0, // get top level categories
+								    'orderby'       => 'name',
+								    'order'         => 'ASC',
+								    'hierarchical'  => 1,
+								    'pad_counts'    => 0
+								);
+								$categories = get_categories( $args );
+								foreach ( $categories as $category ){
+									echo '<li><a href="'. esc_url(get_category_link($category->term_id)) .'" title="">'. $category->name .'</a></li>';
+								}
+							?>
 
-				if(qtrans_getLanguage() == 'en'){
-					$en = 'style="display: none;"';
-				}
+						</ul>
 
-				if(qtrans_getLanguage() == 'es'){
-					$es = 'style="display: none;"';
-				}
+						<?php /*<ul>
+							<li><a href="#" title="">ALIMENTAÇÃO</a></li>
+							<li><a href="#" title="">BELEZA</a></li>
+							<li><a href="#" title="">CORPO</a></li>
+							<li><a href="#" title="">LAZER</a></li>
+							<li><a href="#" title="">MELHOR IDADE</a></li>
+						</ul>*/?>
+					</li>
+					<li><a href="#" title="">SOBRE MIM</a></li>
+				</ul>
 
-				wp_nav_menu( array(
-					'menu'           => 'Menu Topo',
-				    'theme_location' => 'primary',
-				    'items_wrap'     => '<nav class="nav"><ul class="menu"><div class="container">
-				    	<li class="idioma">
-				    		<a href="http://www.toplogtrade.com.br/pt" '.$pt.' title="PT">PT</a>
-				    		<a href="http://www.toplogtrade.com.br/en" '.$en.' title="EN">EN</a>
-				    		<a href="http://www.toplogtrade.com.br/es" '.$es.' title="ES">ES</a>
-				    	</li>
-				    %3$s</div></ul></nav>'
-				) );
-			 ?>
+				<ul class="social">
+					<li><a href="http://youtube.com" title="Youtube" target="_blank"><i class="fa fa-youtube"></i></a></li>
+					<li><a href="http://instagram.com" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="http://facebook.com" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+					<li style="display: none;"><a href="javascript:void(0)" class="search-nav">&nbsp;&nbsp;<label for="search"><i class="fa fa-search"></i></label></a></li>
+				</ul>
+			</div>
+		</nav>
 
-		</session>
+		<h1 class="logo"><a href="<?php echo get_home_url(); ?>" alt="Adriana Miranda">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Adriana Miranda">
+		</a></h1>
 	</header>
