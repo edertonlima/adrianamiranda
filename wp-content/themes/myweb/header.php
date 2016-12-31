@@ -48,14 +48,14 @@
 </script>
 
 </head>
-<body class="home">
+<body <?php body_class(); ?>>
 
 	<header class="header">
 		<nav class="nav">
 			<div class="container">
 				<ul class="menu">
-					<li class="ativo"><a href="<?php echo get_home_url(); ?>" title="HOME">HOME</a></li>
-					<li>
+					<li class="<?php if(is_home()){ echo 'ativo'; } ?>"><a href="<?php echo get_home_url(); ?>" title="HOME">HOME</a></li>
+					<li class="<?php if(is_category()){ echo 'ativo'; } ?>">
 						<a href="javascript://" title="">CATEGORIAS <i class="fa fa-angle-down"></i></a>
 
 						<ul>
@@ -69,9 +69,18 @@
 								    'hierarchical'  => 1,
 								    'pad_counts'    => 0
 								);
+
 								$categories = get_categories( $args );
+								if(is_category()){ $category_active = get_the_category(); }
 								foreach ( $categories as $category ){
-									echo '<li><a href="'. esc_url(get_category_link($category->term_id)) .'" title="">'. $category->name .'</a></li>';
+									if(is_category()){ 
+										if($category->term_id == $category_active[0]->term_id){
+											$class_category = 'ativo';
+										}else{
+											$class_category = '';
+										}
+									}
+									echo '<li class="'.$class_category.'"><a href="'. esc_url(get_category_link($category->term_id)) .'" title="">'. $category->name .'</a></li>'; //print_r($category);
 								}
 							?>
 

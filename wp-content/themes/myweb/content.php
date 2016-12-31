@@ -3,7 +3,7 @@
 	<header class="post-header">
 		<div class="container-info">
 			<span class="categoria"><?php the_category(' '); ?></span>
-			<h2><a href="#" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
+			<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 			<span class="post-date" title="2016-10-06 21:32:47"><?php the_date(); ?></span>
 		</div>
 	</header>
@@ -15,7 +15,7 @@
 		<?php the_content(); ?>
 
 		<div class="leia-mais">
-			<a href="#">Continue lendo</a>
+			<a href="<?php the_permalink(); ?>">Continue lendo</a>
 		</div>
 	</div>
 

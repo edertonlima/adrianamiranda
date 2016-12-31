@@ -14,11 +14,6 @@
 	// Unable the admin bar
 	add_filter('show_admin_bar', '__return_false');
 
-
-
-
-
-
 	/* MENUS */
 	add_action( 'after_setup_theme', 'register_menu' );
 	function register_menu() {

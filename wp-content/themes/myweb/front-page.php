@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<session class="post-destaque"> 
+<session class="post-list"> 
     <?php
         $getPosts = array(
             'post_type'   => 'post',
@@ -14,7 +14,7 @@
 			<div class="slide-home">
 				<?php 
 					while($posts->have_posts()) : $posts->the_post(); 
-						get_template_part( 'content-home', get_post_format() );
+						get_template_part( 'content-list', get_post_format() );
 					endwhile;
 				?>
 			</div>
@@ -43,7 +43,7 @@
 	</div>
 </session>
 
-<session class="post-list"> 
+<session class="post-det"> 
 	<div class="container">
 	    <?php
 	        $getPosts = array(
