@@ -441,6 +441,23 @@ p {
 }
 
 
+.home {
+	.post-det {
+		margin-top: 30px;
+
+		.container {
+			width: 80%;
+			max-width: 900px;
+		}
+
+		.conteudo-post {
+			max-height: 300px;
+			overflow: hidden;
+		}
+	}
+}
+
+
 /* POST */
 .post-list {
 	width: 100%;
@@ -599,6 +616,44 @@ p {
 }
 
 
+.nav-post {
+	font-size: .875rem;
+	margin-bottom: 30px;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+
+	a {
+		width: 50%;
+		@include animacao('','');
+
+		span {
+			color: #1d1d1d;
+
+			i {
+				color: #1d1d1d;
+			}
+
+			&:hover {
+				color: $destaque;
+
+				i {
+					color: $destaque;
+				}
+			}
+		}
+
+		&.prev {
+			float: left;
+		}
+
+		&.next {
+			float: right;
+			text-align: right;
+		}
+	}
+}
+
+
 /* SOBRE MIM - HOME */
 .sobre-home {
 	width: 100%;
@@ -648,15 +703,8 @@ p {
 }
 
 
-/* LISTAGEM HOME*/
+
 .post-det {
-	margin-top: 30px;
-
-	.container {
-		width: 80%;
-		max-width: 900px;
-	}
-
 	.post {
 		margin-bottom: 50px;
 
@@ -704,7 +752,7 @@ p {
 			}
 
 			h2 {
-				margin: 15px 0;
+				margin: 5px 0 0;
 
 				a {
 					font-size: 1.375rem;
@@ -727,23 +775,23 @@ p {
 					margin-bottom: 0;
 				}
 			}
+		}
 
-			.leia-mais {
-				margin: 10px 0;
-				text-align: center;
-				text-transform: uppercase;
+		.leia-mais {
+			margin: 10px 0;
+			text-align: center;
+			text-transform: uppercase;
 
-				a {
-					color: $destaque;
-					font-size: .75rem;
-					font-weight: $light;;
-					text-decoration: none;
-					letter-spacing: .12em;
-					@include animacao('','');
+			a {
+				color: $destaque;
+				font-size: .75rem;
+				font-weight: $light;;
+				text-decoration: none;
+				letter-spacing: .12em;
+				@include animacao('','');
 
-					&:hover {
-						color: $cor-txt;
-					}
+				&:hover {
+					color: $cor-txt;
 				}
 			}
 		}
@@ -754,9 +802,9 @@ p {
 			@include box-sizing();
 			@include clear();
 
-			.comentarios, .social, .likes {
+			.autor, .comentarios, .social, .likes {
 				float: left;
-				width: (100%)/3;
+				width: (100%)/2;
 				padding: 10px;
 				@include box-sizing();
 				text-align: center;
@@ -772,8 +820,14 @@ p {
 				}
 			}
 
-			.comentarios, .social {
+			.autor, .comentarios, .social {
 				border-right: 1px solid #dadada;
+			}
+
+			.autor {
+				a {
+					text-transform: uppercase;
+				}
 			}
 		}
 

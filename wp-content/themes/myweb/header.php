@@ -59,7 +59,6 @@
 						<a href="javascript://" title="">CATEGORIAS <i class="fa fa-angle-down"></i></a>
 
 						<ul>
-
 							<?php
 								$args = array(
 								    'taxonomy'      => 'category',
@@ -86,27 +85,16 @@
 
 						</ul>
 
-						<?php /*<ul>
-							<li><a href="#" title="">ALIMENTAÇÃO</a></li>
-							<li><a href="#" title="">BELEZA</a></li>
-							<li><a href="#" title="">CORPO</a></li>
-							<li><a href="#" title="">LAZER</a></li>
-							<li><a href="#" title="">MELHOR IDADE</a></li>
-						</ul>*/?>
 					</li>
-					<li><a href="#" title="">SOBRE MIM</a></li>
+					<li><a href="<?php echo get_page_link(2); ?>" title="<?php echo get_the_title(2); ?>"><?php echo get_the_title(2); ?></a></li>
 				</ul>
 
-				<ul class="social">
-					<li><a href="http://youtube.com" title="Youtube" target="_blank"><i class="fa fa-youtube"></i></a></li>
-					<li><a href="http://instagram.com" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a></li>
-					<li><a href="http://facebook.com" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
-					<li style="display: none;"><a href="javascript:void(0)" class="search-nav">&nbsp;&nbsp;<label for="search"><i class="fa fa-search"></i></label></a></li>
-				</ul>
+				<?php include 'social.php'; ?>
+
 			</div>
 		</nav>
 
-		<h1 class="logo"><a href="<?php echo get_home_url(); ?>" alt="Adriana Miranda">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Adriana Miranda">
+		<h1 class="logo"><a href="<?php echo get_home_url(); ?>" alt="<?php bloginfo( 'name' ); ?>">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo( 'name' ); ?>">
 		</a></h1>
 	</header>

@@ -9,27 +9,38 @@
 	</header>
 
 	<?php $imagem = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), '' ); ?>
-	<img src="<?php if($imagem[0]){ echo $imagem[0]; } ?>" alt="" class="image-post">
+	<img src="<?php if($imagem[0]){ echo $imagem[0]; } ?>" alt="<?php the_title(); ?>" class="image-post">
 
 	<div class="conteudo-post">
-		<?php the_content(); ?>
+		<?php if(is_home()){ ?>
+			<p><?php the_field('descrição'); ?></p>
+		<?php }else{
+			the_content();
+		} ?>
+	</div>
 
-		<div class="leia-mais">
-			<a href="<?php the_permalink(); ?>">Continue lendo</a>
-		</div>
+	<div class="leia-mais">
+		<a href="<?php the_permalink(); ?>" title="Continue lendo">Continue lendo</a>
 	</div>
 
 	<footer class="post-footer">
-		<span class="comentarios">
-			<a href="#">
-				<i class="fa fa-comments-o"></i> 0
-			</a>
-		</span>	
-		<ul class="social">
-			<li><a href="http://youtube.com" title="Youtube" target="_blank"><i class="fa fa-youtube"></i></a></li>
-			<li><a href="http://instagram.com" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a></li>
-			<li><a href="http://facebook.com" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
-		</ul>			
+		<?php /* if(is_single()){ ?>
+			<span class="autor">
+				<a href="#">
+					por <?php the_author(); ?>
+				</a>
+			</span>
+		<?php }else{ ?>
+			<span class="comentarios">
+				<a href="#">
+					<i class="fa fa-comments-o"></i> 0
+				</a>
+			</span>
+		<?php } ?>
+		</span>	*/ ?>
+		
+		<?php include 'social.php'; ?>
+					
 		<span class="likes">
 			<a href="#" class="" title="">
 				<i class="fa fa-heart" aria-hidden="true"></i>

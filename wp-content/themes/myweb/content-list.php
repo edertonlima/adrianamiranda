@@ -10,11 +10,13 @@
 			<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 
 			<div class="post-footer">
+				<?php /*
 				<span class="comentarios">
 					<a href="#">
 						<i class="fa fa-comments-o"></i> 0
 					</a>
 				</span>
+				*/ ?>
 				<span class="post-date" title="2016-10-06 21:32:47"><?php the_date(); ?></span>
 				<span class="post-likes">
 					<a href="#" class="zilla-likes active" id="zilla-likes-90" title="You already like this">

@@ -558,4 +558,28 @@ function jeherve_remove_all_jp_css() {
 add_action('wp_print_styles', 'jeherve_remove_all_jp_css' );
 
 */
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Configurações',
+		'menu_title'	=> 'Configurações',
+		'menu_slug' 	=> 'configuracoes-geral',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> true
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Geral',
+		'menu_title'	=> 'Geral',
+		'parent_slug'	=> 'configuracoes-geral',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Redes sociais',
+		'menu_title'	=> 'Redes sociais',
+		'parent_slug'	=> 'configuracoes-geral',
+	));
+}
+
 ?>

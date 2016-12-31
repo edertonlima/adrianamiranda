@@ -35,11 +35,8 @@
 		<p>Ter um corpo bonito e saudável com tantas mudanças que o tempo proporciona é um verdadeiro desafio. É aqui que começamos a sentir os claros sinais do tempo.</p>
 		
 		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/assinatura.png" class="assinatura" alt="">
-		<ul class="social">
-			<li><a href="http://youtube.com" title="Youtube" target="_blank"><i class="fa fa-youtube"></i></a></li>
-			<li><a href="http://instagram.com" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a></li>
-			<li><a href="http://facebook.com" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
-		</ul>
+
+		<?php include 'social.php'; ?>
 	</div>
 </session>
 
@@ -110,13 +107,13 @@
 	$(document).ready(function(){
 
 		var height = 0;
-		$('.post-destaque .post-info').each(function(){
+		$('.post-list .post-info').each(function(){
 			var atualHeight = $(this).height();
 			if(atualHeight>height){
 				height = atualHeight;
 			}
 		});
-		$('.post-destaque .post-info').height(height);
+		$('.post-list .post-info').height(height);
 
 
 		$(".enviar").click(function(){

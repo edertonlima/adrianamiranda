@@ -2026,7 +2026,7 @@ function get_adjacent_post_link( $format, $link, $in_same_term = false, $exclude
 		$date = mysql2date( get_option( 'date_format' ), $post->post_date );
 		$rel = $previous ? 'prev' : 'next';
 
-		$string = '<a href="' . get_permalink( $post ) . '" rel="'.$rel.'">';
+		$string = '<a href="' . get_permalink( $post ) . '" rel="'.$rel.'" class="'.$rel.'">';
 		$inlink = str_replace( '%title', $title, $link );
 		$inlink = str_replace( '%date', $date, $inlink );
 		$inlink = $string . $inlink . '</a>';
@@ -2581,9 +2581,8 @@ function _navigation_markup( $links, $class = 'posts-navigation', $screen_reader
 	}
 
 	$template = '
-	<nav class="navigation %1$s" role="navigation">
-		<h2 class="screen-reader-text">%2$s</h2>
-		<div class="nav-links">%3$s</div>
+	<nav class="nav-post %1$s" role="navigation">
+		%3$s
 	</nav>';
 
 	/**
