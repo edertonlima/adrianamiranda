@@ -86,7 +86,7 @@
 						</ul>
 
 					</li>
-					<li><a href="<?php echo get_page_link(2); ?>" title="<?php echo get_the_title(2); ?>"><?php echo get_the_title(2); ?></a></li>
+					<li class="<?php if(is_page(2)){ echo 'ativo'; } ?>"><a href="<?php echo get_page_link(2); ?>" title="<?php echo get_the_title(2); ?>"><?php echo get_the_title(2); ?></a></li>
 				</ul>
 
 				<?php include 'social.php'; ?>

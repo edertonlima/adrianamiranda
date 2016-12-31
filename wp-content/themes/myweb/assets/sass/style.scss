@@ -838,6 +838,18 @@ p {
 }
 
 
+.page {
+	.container {
+		width: 80%;
+		max-width: 900px;
+	}
+
+	.conteudo-post {
+		margin: 20px 0; 
+	}
+}
+
+
 /* NEWSLETTER */
 .news {
 	margin-top: 30px;
