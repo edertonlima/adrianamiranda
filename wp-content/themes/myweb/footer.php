@@ -31,7 +31,7 @@
 						<?php $imagem = wp_get_attachment_image_src( get_post_thumbnail_id(2), 'thumbnail' ); ?>
 						<!--<img src="<?php if($imagem[0]){ echo $imagem[0]; } ?>" alt="">-->
 						<img class="capa-home" src="<?php echo get_template_directory_uri(); ?>/assets/images/capa-home.jpg" alt="">
-						<p>Ter um corpo bonito e saudável com tantas mudanças que o tempo proporciona é um verdadeiro desafio. É aqui que começamos a sentir os claros sinais do tempo.</p>
+						<p><?php the_field('descrição',2); ?></p>
 						
 						<?php include 'social.php'; ?>
 						
@@ -59,12 +59,12 @@
 			</div>
 
 			<div class="logo-rodape">
-				<a href="<?php echo get_home_url(); ?>" alt="Adriana Miranda">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Adriana Miranda">
+				<a href="<?php echo get_home_url(); ?>" alt="<?php bloginfo( 'name' ); ?>">
+					<img src="<?php the_field('logo','option'); ?>" alt="<?php bloginfo( 'name' ); ?>">
 				</a>
 			</div>
 
-			<p class="copy"><i class="fa fa-copyright" aria-hidden="true"></i> ADRIANA MIRANDA. TODOS OS DIREITOS RESERVADOS.</p>
+			<p class="copy"><i class="fa fa-copyright" aria-hidden="true"></i> <?php bloginfo( 'name' ); ?>. TODOS OS DIREITOS RESERVADOS.</p>
 
 		</div>
 	</footer>

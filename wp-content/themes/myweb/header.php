@@ -8,15 +8,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta http-equiv="content-language" content="pt" />
 <meta name="rating" content="General" />
-<meta name="description" content="" />
+<meta name="description" content="<?php the_field('descricao', 'option'); ?>" />
 <meta name="keywords" content="" />
 <meta name="robots" content="index,follow" />
 <meta name="author" content="" />
 <meta name="language" content="pt-br" />
-<meta name="title" content="" />
+
+<?php 
+	$titulo = '';
+	if(is_category()){
+		$titulo = get_the_archive_title().' - ';
+	}else{
+		if(!is_home()){
+			$titulo = get_the_title().' - ';
+		}
+	}
+	$titulo = $titulo.get_bloginfo( 'name' ); 
+?>
+<meta name="title" content="<?php echo $titulo; ?>" />
 <!--<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />-->
 
-<title></title>
+<title><?php echo $titulo; ?></title>
 
 <?php get_header(); ?>
 
@@ -56,7 +68,7 @@
 				<ul class="menu">
 					<li class="<?php if(is_home()){ echo 'ativo'; } ?>"><a href="<?php echo get_home_url(); ?>" title="HOME">HOME</a></li>
 					<li class="<?php if(is_category()){ echo 'ativo'; } ?>">
-						<a href="javascript://" title="">CATEGORIAS <i class="fa fa-angle-down"></i></a>
+						<a href="javascript:" title="">CATEGORIAS <i class="fa fa-angle-down"></i></a>
 
 						<ul>
 							<?php
@@ -95,6 +107,6 @@
 		</nav>
 
 		<h1 class="logo"><a href="<?php echo get_home_url(); ?>" alt="<?php bloginfo( 'name' ); ?>">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo( 'name' ); ?>">
+			<img src="<?php the_field('logo','option'); ?>" alt="<?php bloginfo( 'name' ); ?>">
 		</a></h1>
 	</header>

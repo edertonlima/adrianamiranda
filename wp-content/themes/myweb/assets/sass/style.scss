@@ -172,6 +172,10 @@ body * {
 		padding-right: 15px;
 		padding-left: 15px;
 		@include box-sizing();
+
+		img {
+			max-width: 100%; 
+		}
 	}
 
 
@@ -715,6 +719,14 @@ p {
 			text-align: center;
 			@include box-sizing();
 
+			.tit-page {
+				color: $destaque;
+				display: inline-block;
+				position: relative;
+				text-transform: uppercase;
+				font-size: .875rem;
+			}
+
 			.categoria {
 				width: 100%;
 
@@ -844,8 +856,73 @@ p {
 		max-width: 900px;
 	}
 
+	.post-header {
+		margin-bottom: 30px;
+	}
+
 	.conteudo-post {
 		margin: 20px 0; 
+	}
+
+	.sobre-mim {
+		.img-page {
+			width: 35%;
+			float: left;
+			clear: both;
+			margin: 0 20px 20px 0;
+		}
+
+		form {
+			width: 100%;
+			display: block;
+			margin: 60px 0;
+			@include clear();
+
+			fieldset {
+				width: 45%;
+				display: block;
+				margin-bottom: 15px;
+				@include clear();
+
+				label {
+					display: block;
+					width: 100%;
+					margin-bottom: 2px;
+					font-family: $font-family2;
+					font-size: .9375rem;
+					color: #727272;
+				}
+
+				&.mensagem {
+					width: 90%;
+				}
+			}
+
+			button {
+				float: left;
+				width: 100px;
+			}
+
+			.msg-form {
+				line-height: 19px;
+				text-align: left;
+				font-family: $font-family2;
+				font-size: .9375rem;
+				color: #727272;
+				padding-left: 30px;
+				display: table-cell;
+				vertical-align: middle;
+				height: 38px;
+
+				&.erro {
+					color: $vermelho;
+				}
+
+				&.ok {
+					color: $verde;
+				}
+			}
+		}
 	}
 }
 
@@ -873,6 +950,26 @@ p {
 		button {
 			width: 128px;
 			margin-left: 4px;
+		}
+
+		.msg-form {
+			line-height: 19px;
+			text-align: center;
+			font-family: $font-family2;
+			font-size: .9375rem;
+			color: #727272;
+			height: 38px;
+			display: block;
+			width: 100%;
+			margin-top: 20px;
+
+			&.erro {
+				color: $vermelho;
+			}
+
+			&.ok {
+				color: $verde;
+			}
 		}
 	}
 
@@ -1062,6 +1159,7 @@ p {
 
 				&:last-child {
 					margin-bottom: 0px;
+					border-bottom: none;
 				}
 
 				.post-img {
@@ -1191,6 +1289,7 @@ p {
 		font-size: .75rem;
 		font-weight: $light;
 		font-family: $font-family2;
+		text-transform: uppercase;
 	}
 
 }

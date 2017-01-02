@@ -244,8 +244,10 @@ add_action('admin_head', 'my_custom_fonts');
 
 function my_custom_fonts() {
   echo '<style>
-	#menu-media, #menu-comments, #menu-appearance, #menu-plugins, #menu-tools, #menu-settings, #toplevel_page_edit-post_type-acf {
-		/*display: none;*/
+	#menu-media, #menu-comments, #menu-appearance, #menu-plugins, #menu-tools, #menu-settings, #toplevel_page_edit-post_type-acf, #toplevel_page_edit-post_type-acf-field-group, 
+	#toplevel_page_zilla-likes, 
+	.acf-postbox h2 a {
+		display: none!important;
 	}
   </style>';
 }
@@ -570,13 +572,13 @@ if( function_exists('acf_add_options_page') ) {
 	));
 
 	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Geral',
+		'page_title' 	=> 'Configurações Gerais',
 		'menu_title'	=> 'Geral',
 		'parent_slug'	=> 'configuracoes-geral',
 	));
 	
 	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Redes sociais',
+		'page_title' 	=> 'Configurações de Redes sociais',
 		'menu_title'	=> 'Redes sociais',
 		'menu_slug' 	=> 'redes-sociais',
 		'parent_slug'	=> 'configuracoes-geral',

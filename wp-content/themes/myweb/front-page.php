@@ -25,16 +25,19 @@
 
 <session class="sobre-home">
 	<div class="container">
-		<h2><a href="#">EU SOU ADRIANA MIRANDA</a></h2>
+		<h2><a href="<?php the_permalink(2); ?>" title="<?php the_field('titulo_home',2); ?>"><?php the_field('titulo_home',2); ?></a></h2>
 
 		<?php $imagem = wp_get_attachment_image_src( get_post_thumbnail_id(2), 'thumbnail' ); ?>
-		<!--<img src="<?php if($imagem[0]){ echo $imagem[0]; } ?>" alt="">-->
-		<img class="capa-home" src="<?php echo get_template_directory_uri(); ?>/assets/images/capa-home.jpg" alt="">
-
-		<h3>SUPERANDO OS SINAIS DO TEMPO</h3>
-		<p>Ter um corpo bonito e saudável com tantas mudanças que o tempo proporciona é um verdadeiro desafio. É aqui que começamos a sentir os claros sinais do tempo.</p>
+		<img src="<?php the_field('imagem_perfil',2); ?>" class="capa-home" alt="<?php the_field('titulo_home',2); ?>">
 		
-		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/assinatura.png" class="assinatura" alt="">
+		<?php if(get_field('assinatura',2)){ ?>
+			<h3><?php the_field('sub_titulo_home',2); ?></h3>
+		<?php } ?>
+		<p><?php the_field('descrição',2); ?></p>
+		
+		<?php if(get_field('assinatura',2)){ ?>
+			<img src="<?php the_field('assinatura',2); ?>" class="assinatura" alt="<?php the_field('titulo_home',2); ?>">
+		<?php } ?>
 
 		<?php include 'social.php'; ?>
 	</div>
@@ -73,11 +76,11 @@
 
 <session class="news">
 	<div class="container">
-		<form action="#">
+		<form action="javascript:">
 			<h2>Cadastre-se em nossa newsletter</h2>
-			<input type="text" name="" placeholder="E-mail">
-			<button type="submit">CADASTRAR</button>
-			<p></p>
+			<input type="text" name="email" id="email" placeholder="E-mail">
+			<button type="button" class="enviar">CADASTRAR</button>
+			<p class="msg-form"></p>
 		</form>
 	</div>
 </session>
@@ -115,24 +118,29 @@
 		});
 		$('.post-list .post-info').height(height);
 
-
 		$(".enviar").click(function(){
 			$('.enviar').html('ENVIANDO').prop( "disabled", true );
-			$('.msg-form').html('').hide();
-			var nome = $('#nome').val();
+			$('.msg-form').removeClass('erro ok').html('');
 			var email = $('#email').val();
-			var telefone = $('#telefone').val();
-			var mensagem = $('#mensagem').val();
+			var para = '<?php the_field('email', 'option'); ?>';
+			var nome_site = '<?php bloginfo('name') ?>';
 
 			if(email!=''){
-				$.getJSON("<?php echo get_template_directory_uri(); ?>/mail.php", { nome: nome, email: email, telefone: telefone, mensagem: mensagem }, function(result){		
-					$('.msg-form').html(result).show();
-					$('.contato').trigger("reset");
-					$('.enviar').html('ENVIAR').prop( "disabled", false );
+				$.getJSON("<?php echo get_template_directory_uri(); ?>/news.php", { email: email, para: para, nome_site: nome_site }, function(result){		
+					if(result=='ok'){
+						resultado = 'Enviado com sucesso! Obrigado.';
+						classe = 'ok';
+					}else{
+						resultado = result;
+						classe = 'erro';
+					}
+					$('.msg-form').addClass(classe).html(resultado);
+					$('.news form').trigger("reset");
+					$('.enviar').html('CADASTRAR').prop( "disabled", false );
 				});
 			}else{
-				$('.msg-form').html('Por favor, digite um e-mail válido.').show();
-				$('.enviar').html('Enviar').prop( "disabled", false );
+				$('.msg-form').addClass('erro').html('Por favor, digite um e-mail válido.');
+				$('.enviar').html('CADASTRAR').prop( "disabled", false );
 			}
 		});
 	});
