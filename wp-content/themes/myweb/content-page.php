@@ -21,7 +21,7 @@
 					<?php the_content(); ?>
 				</div>
 
-				<?php if(is_page(2)){ ?>
+				<?php if(is_page(84)){ ?>
 					<form action="javascript:" class="contato">
 						<fieldset class="">
 							<label for="nome">Seu Nome</label>
@@ -63,7 +63,7 @@
 		<?php } ?>
 		</span>	*/ ?>
 		
-		<?php include 'social.php'; ?>
+		<?php include 'social-share.php'; ?>
 					
 		<span class="likes">
 			<a href="#" class="" title="">
@@ -75,7 +75,7 @@
 
 </article><!-- #post-## -->
 
-<?php if(is_page(2)){ ?>
+<?php if(is_page(84)){ ?>
 <script type="text/javascript">
 	$(document).ready(function(){
 	

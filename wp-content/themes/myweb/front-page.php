@@ -25,18 +25,18 @@
 
 <session class="sobre-home">
 	<div class="container">
-		<h2><a href="<?php the_permalink(2); ?>" title="<?php the_field('titulo_home',2); ?>"><?php the_field('titulo_home',2); ?></a></h2>
+		<?php $page = get_page_by_path('sobre-mim'); ?>
+		<h2><a href="<?php the_permalink($page->ID); ?>" title="<?php the_field('titulo_home',$page->ID); ?>"><?php the_field('titulo_home',$page->ID); ?></a></h2>
 
-		<?php $imagem = wp_get_attachment_image_src( get_post_thumbnail_id(2), 'thumbnail' ); ?>
-		<img src="<?php the_field('imagem_perfil',2); ?>" class="capa-home" alt="<?php the_field('titulo_home',2); ?>">
+		<img src="<?php the_field('imagem_perfil',$page->ID); ?>" class="capa-home" alt="<?php the_field('titulo_home',$page->ID); ?>">
 		
-		<?php if(get_field('assinatura',2)){ ?>
-			<h3><?php the_field('sub_titulo_home',2); ?></h3>
+		<?php if(get_field('assinatura',$page->ID)){ ?>
+			<h3><?php the_field('sub_titulo_home',$page->ID); ?></h3>
 		<?php } ?>
-		<p><?php the_field('descrição',2); ?></p>
+		<p><?php the_field('descrição',$page->ID); ?></p>
 		
-		<?php if(get_field('assinatura',2)){ ?>
-			<img src="<?php the_field('assinatura',2); ?>" class="assinatura" alt="<?php the_field('titulo_home',2); ?>">
+		<?php if(get_field('assinatura',$page->ID)){ ?>
+			<img src="<?php the_field('assinatura',$page->ID); ?>" class="assinatura" alt="<?php the_field('titulo_home',$page->ID); ?>">
 		<?php } ?>
 
 		<?php include 'social.php'; ?>
@@ -65,12 +65,12 @@
 	    ?>
 	</div>
 
-	<?php
+	<?php /*
 		the_posts_pagination( array(
 			'prev_text'          => __( 'Previous page', 'myweb' ),
 			'next_text'          => __( 'Next page', 'myweb' ),
 			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'myweb' ) . ' </span>',
-		) );
+		) );*/
 	?>
 </session>
 

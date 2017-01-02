@@ -240,16 +240,36 @@
 	*/
 
 
+
 add_action('admin_head', 'my_custom_fonts');
 
 function my_custom_fonts() {
   echo '<style>
 	#menu-media, #menu-comments, #menu-appearance, #menu-plugins, #menu-tools, #menu-settings, #toplevel_page_edit-post_type-acf, #toplevel_page_edit-post_type-acf-field-group, 
 	#toplevel_page_zilla-likes, 
-	.acf-postbox h2 a {
+	#screen-options-link-wrap, 
+	.acf-postbox h2 a, 
+	#the-list #post-94, 
+	#the-list #post-65, 
+	.taxonomy-category .form-field.term-parent-wrap 
+	{
 		display: none!important;
 	}
   </style>';
+}
+
+
+
+function gera_url_encurtada($url){
+    $url = urlencode($url);
+    $xml =  simplexml_load_file("http://migre.me/api.xml?url=$url");
+ 
+    if($xml->error != 0){
+        return $xml->errormessage;
+    }
+    else{
+        return $xml->migre;
+    }
 }
 
 	/* Insere campo do link do VIDEO *

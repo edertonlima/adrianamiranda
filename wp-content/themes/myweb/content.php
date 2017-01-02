@@ -39,7 +39,7 @@
 		<?php } ?>
 		</span>	*/ ?>
 		
-		<?php include 'social.php'; ?>
+		<?php include 'social-share.php'; ?>
 					
 		<span class="likes">
 			<a href="#" class="" title="">

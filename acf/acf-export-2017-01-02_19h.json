@@ -1,0 +1,315 @@
+[
+    {
+        "key": "group_5869886616431",
+        "title": "Configura\u00e7\u00f5es Gerais",
+        "fields": [
+            {
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_5869887f34d28",
+                "label": "E-mail de Contato",
+                "name": "email",
+                "type": "email",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "new_lines": "",
+                "maxlength": "",
+                "placeholder": "",
+                "rows": "",
+                "key": "field_586988ea34d29",
+                "label": "Descri\u00e7\u00e3o do Site",
+                "name": "descricao",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "return_format": "url",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": 300,
+                "min_height": "",
+                "min_size": "",
+                "max_width": 1000,
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "key": "field_5869893134d2a",
+                "label": "Logo do Site",
+                "name": "logo",
+                "type": "image",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "acf-options-geral"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_5867c00d62879",
+        "title": "Descri\u00e7\u00e3o curta para resumo",
+        "fields": [
+            {
+                "default_value": "",
+                "new_lines": "",
+                "maxlength": "",
+                "placeholder": "Digite aqui um texto curto de resumo do seu post",
+                "rows": 3,
+                "key": "field_5867c01b97848",
+                "label": "Resumo",
+                "name": "descri\u00e7\u00e3o",
+                "type": "textarea",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ],
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "default"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_58680c7430afa",
+        "title": "Redes Sociais",
+        "fields": [
+            {
+                "default_value": "",
+                "placeholder": "",
+                "key": "field_58680c9767d4a",
+                "label": "Youtube",
+                "name": "youtube",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "placeholder": "",
+                "key": "field_58680d0767d4b",
+                "label": "Instagram",
+                "name": "instagram",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "placeholder": "",
+                "key": "field_58680d1567d4c",
+                "label": "Facebook",
+                "name": "facebook",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "redes-sociais"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    },
+    {
+        "key": "group_58696c9350088",
+        "title": "Titulo Home",
+        "fields": [
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_58696caf47362",
+                "label": "Titulo Home",
+                "name": "titulo_home",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "key": "field_58696d7fa28f2",
+                "label": "Sub T\u00edtulo Home",
+                "name": "sub_titulo_home",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "return_format": "url",
+                "preview_size": "full",
+                "library": "all",
+                "min_width": 300,
+                "min_height": 300,
+                "min_size": "",
+                "max_width": 300,
+                "max_height": 300,
+                "max_size": "",
+                "mime_types": "",
+                "key": "field_58696eaa4596a",
+                "label": "Imagem Perfil",
+                "name": "imagem_perfil",
+                "type": "image",
+                "instructions": "Tamanho 300px x 300px",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            },
+            {
+                "return_format": "url",
+                "preview_size": "full",
+                "library": "all",
+                "min_width": 300,
+                "min_height": "",
+                "min_size": "",
+                "max_width": 300,
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "key": "field_58698678e013a",
+                "label": "Imagem de Assinatura",
+                "name": "assinatura",
+                "type": "image",
+                "instructions": "Tamanho 300px de largura",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                }
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page",
+                    "operator": "==",
+                    "value": "2"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]
