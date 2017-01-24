@@ -18,12 +18,12 @@
 				</span>
 				*/ ?>
 				<span class="post-date" title="2016-10-06 21:32:47"><?php the_date(); ?></span>
-				<span class="post-likes">
+				<?php /*<span class="post-likes">
 					<a href="#" class="zilla-likes active" id="zilla-likes-90" title="You already like this">
 						<i class="fa fa-heart" aria-hidden="true"></i>
 						<span class="zilla-likes-count">10</span>
 					</a>
-				</span>
+				</span>*/ ?>
 			</div>
 		</div>
 	</header>

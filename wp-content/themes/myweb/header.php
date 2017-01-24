@@ -135,7 +135,7 @@
 								$args = array(
 								    'taxonomy'      => 'category',
 								    'parent'        => 0, // get top level categories
-								    'orderby'       => 'name',
+								    'orderby'       => 'date',
 								    'order'         => 'ASC',
 								    'hierarchical'  => 1,
 								    'pad_counts'    => 0
@@ -162,6 +162,9 @@
 					<?php $page = get_page_by_path('sobre-mim'); ?>
 					<li class="<?php if(is_page($page->ID)){ echo 'ativo'; } ?>"><a href="<?php echo get_page_link($page->ID); ?>" title="<?php echo get_the_title($page->ID); ?>"><?php echo get_the_title($page->ID); ?></a></li>
 
+					<?php $page = get_page_by_path('na-midia'); ?>
+					<li class="<?php if(is_page($page->ID)){ echo 'ativo'; } ?>"><a href="<?php echo get_page_link($page->ID); ?>" title="<?php echo get_the_title($page->ID); ?>"><?php echo get_the_title($page->ID); ?></a></li>
+
 					<?php $page = get_page_by_path('contato'); ?>
 					<li class="<?php if(is_page($page->ID)){ echo 'ativo'; } ?>"><a href="<?php echo get_page_link($page->ID); ?>" title="<?php echo get_the_title($page->ID); ?>"><?php echo get_the_title($page->ID); ?></a></li>
 				</ul>
@@ -171,7 +174,13 @@
 			</div>
 		</nav>
 
-		<h1 class="logo"><a href="<?php echo get_home_url(); ?>" alt="<?php bloginfo( 'name' ); ?>">
-			<img src="<?php the_field('logo','option'); ?>" alt="<?php bloginfo( 'name' ); ?>">
-		</a></h1>
+		<h1 class="logo">
+			<?php if(!is_front_page()){ ?>
+				<a href="<?php echo get_home_url(); ?>" alt="<?php bloginfo( 'name' ); ?>">
+			<?php } ?>
+					<img src="<?php the_field('logo','option'); ?>" alt="<?php bloginfo( 'name' ); ?>">
+			<?php if(!is_front_page()){ ?>
+				</a>
+			<?php } ?>
+		</h1>
 	</header>

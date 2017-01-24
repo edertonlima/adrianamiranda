@@ -12,15 +12,18 @@
 	<img src="<?php if($imagem[0]){ echo $imagem[0]; } ?>" alt="<?php the_title(); ?>" class="image-post">
 
 	<div class="conteudo-post">
-		<?php if(is_home()){ ?>
+		<?php if(is_front_page()){ ?>
 			<p><?php the_field('descrição'); ?></p>
 		<?php }else{
 			the_content();
 		} ?>
 	</div>
-
+	
+	
 	<div class="leia-mais">
-		<a href="<?php the_permalink(); ?>" title="Continue lendo">Continue lendo</a>
+		<?php if(is_front_page()){ ?>
+			<a href="<?php the_permalink(); ?>" title="Continue lendo">Continue lendo</a>
+		<?php } ?>
 	</div>
 
 	<footer class="post-footer">
@@ -41,11 +44,11 @@
 		
 		<?php include 'social-share.php'; ?>
 					
-		<span class="likes">
+		<?php /*<span class="likes">
 			<a href="#" class="" title="">
 				<i class="fa fa-heart" aria-hidden="true"></i>
 				<span class="zilla-likes-count">10</span>
 			</a>
-		</span>
+		</span> */?>
 	</footer>
 </article>

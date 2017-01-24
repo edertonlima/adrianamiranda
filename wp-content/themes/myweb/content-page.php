@@ -3,7 +3,7 @@
 	<header class="post-header">
 		<div class="container-info">
 			<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-			<span class="post-date" title="2016-10-06 21:32:47"><?php the_date(); ?></span>
+			<!--<span class="post-date" title="2016-10-06 21:32:47"><?php the_date(); ?></span>-->
 		</div>
 	</header>
 	
@@ -17,7 +17,7 @@
 					<img src="<?php if($imgPage[0]){ echo $imgPage[0]; } ?>" alt="" class="img-page">
 				<?php } ?>
 
-				<div class="conteudo-post">
+				<div class="conteudo-post <?php if($imgPage){ echo 'imagepost'; }?>">
 					<?php the_content(); ?>
 				</div>
 
@@ -63,14 +63,14 @@
 		<?php } ?>
 		</span>	*/ ?>
 		
-		<?php include 'social-share.php'; ?>
+		<?php //include 'social-share.php'; ?>
 					
-		<span class="likes">
+		<?php /*<span class="likes">
 			<a href="#" class="" title="">
 				<i class="fa fa-heart" aria-hidden="true"></i>
 				<span class="zilla-likes-count">10</span>
 			</a>
-		</span>
+		</span>*/ ?>
 	</footer>
 
 </article><!-- #post-## -->

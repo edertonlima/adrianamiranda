@@ -103,6 +103,12 @@ em { text-decoration: italic; }
     }
 }
 
+@mixin grayscale($value) {
+    -webkit-filter: #{"grayscale(#{$value})"};
+    -moz-filter: #{"grayscale(#{$value})"};
+    filter:#{"grayscale(#{$value})"};
+}
+
 /* VARIAVEIS */ 
 $font-family: 'Montserrat', sans-serif;
 $font-family2: 'Open Sans', sans-serif;
@@ -262,10 +268,10 @@ strong {
 }
 
 h1 {
-	margin: 80px auto 28px;
-	max-width: 360px;
-	width: 100%;
-	display: block;
+    margin: 80px auto 28px;
+    max-width: 360px;
+    width: 100%;
+    display: block;
 
 	a {
 		display: block;
@@ -444,8 +450,55 @@ p, p * {
 	}
 }
 
+.home-slide {
+	padding: 0;
+	margin-bottom: 60px;
+	display: block;
+
+	.slide-sobre {
+		display: block;
+		width: 100%;
+		height: 100vh;
+
+		.owl-item {
+			float: left;
+		}
+
+		.item {
+			height: 100vh;
+			display: block;
+			background-size: cover;
+			background-position: top center;
+			@include grayscale('70%');
+		}
+
+		.owl-nav, .owl-dots {
+			display: none;
+		}
+	}
+}
+
 
 .home {
+
+	.header {
+		height: 100vh;
+		position: absolute;
+		z-index: 999;
+		display: table;
+
+		h1 {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+
+			img {
+				width: 80%;
+				max-width: 1000px;
+			}
+		}
+	}
+
 	.post-det {
 		margin-top: 30px;
 
@@ -457,6 +510,10 @@ p, p * {
 		.conteudo-post {
 			max-height: 300px;
 			overflow: hidden;
+			
+			p {
+				text-align: justify!important;
+			}
 		}
 	}
 }
@@ -619,15 +676,18 @@ p, p * {
 	}
 }
 
-
-.nav-post {
+.navigation.post-navigation {
+	h2 {
+		display: none;
+	}
+}
+.nav-post, .nav-links {
 	font-size: .875rem;
 	margin-bottom: 30px;
 	letter-spacing: .1em;
 	text-transform: uppercase;
 
 	a {
-		width: 50%;
 		@include animacao('','');
 
 		span {
@@ -654,6 +714,17 @@ p, p * {
 			float: right;
 			text-align: right;
 		}
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		width: 50%;
+		float: right;
+		text-align: right;
 	}
 }
 
@@ -782,6 +853,7 @@ p, p * {
 		.conteudo-post {
 			p {
 				margin-bottom: 15px;
+				text-align: justify!important;
 
 				&:last-child {
 					margin-bottom: 0;
@@ -840,8 +912,16 @@ p, p * {
 				}
 			}
 
-			.autor, .comentarios, .social {
+			.autor, .comentarios {
 				border-right: 1px solid #dadada;
+			}
+			
+			.social {
+				width: 100%;
+				li:first-child {
+					font-size: .75rem;
+					color: #9e9e9e;
+				}
 			}
 
 			.autor {
@@ -857,7 +937,6 @@ p, p * {
 	}
 }
 
-
 .page {
 	.container {
 		width: 80%;
@@ -870,15 +949,22 @@ p, p * {
 
 	.conteudo-post {
 		margin: 20px 0; 
+
+		p {
+			text-align: justify!important;
+		}
+
+		&.imagepost {
+			padding-left: 37.5%;
+		}
 	}
 
-	.sobre-mim {
-		.img-page {
-			width: 35%;
-			float: left;
-			clear: both;
-			margin: 0 20px 20px 0;
-		}
+
+	.img-page {
+		width: 35%;
+		float: left;
+		clear: both;
+		margin: 0px;
 	}
 
 	form.contato {

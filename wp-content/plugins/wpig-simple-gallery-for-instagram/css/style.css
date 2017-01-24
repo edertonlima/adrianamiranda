@@ -1,0 +1,24 @@
+.instagram-login {
+    background-image: url("../images/sign_in_instagram.png");
+    display: inline-block;
+    width: 160px;
+    height: 60px;
+}
+.gallery-item {
+    float:left;
+    position: relative;
+    padding: 0 10px 6px 0;
+    margin: 0px;
+}
+.gallery-cb {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+}
+.gallery-cb + img {
+    opacity: 0.6
+}
+.gallery-cb:checked + img  {
+    opacity: 1
+}

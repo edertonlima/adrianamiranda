@@ -1,5 +1,20 @@
 <?php get_header(); ?>
 
+<session class="home-slide">
+
+	<div class="slide-sobre">
+
+		<?php if( have_rows('slidehome','option') ):
+			while ( have_rows('slidehome','option') ) : the_row(); ?>
+
+				<div class="item active" style="background-image: url('<?php the_sub_field('imagem','option'); ?>');"></div>
+
+				<?php endwhile;
+		endif; ?>
+	</div>
+
+</session> 
+
 <session class="post-list"> 
     <?php
         $getPosts = array(
@@ -77,7 +92,7 @@
 <session class="news">
 	<div class="container">
 		<form action="javascript:">
-			<h2>Cadastre-se em nossa newsletter</h2>
+			<h2>Assine minha newsletter</h2>
 			<input type="text" name="email" id="email" placeholder="E-mail">
 			<button type="button" class="enviar">CADASTRAR</button>
 			<p class="msg-form"></p>
@@ -101,6 +116,19 @@
 			},
 			1000: {
 				items: 3
+			}
+		}
+	})
+
+	var owl = $('.slide-sobre');
+	owl.owlCarousel({
+		margin: 0,
+		loop: true,
+		autoplay: true,
+		autoplayTimeout: 4000,
+		responsive: {
+			0: {
+				items: 1
 			}
 		}
 	})

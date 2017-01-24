@@ -1,4 +1,5 @@
 <ul class="social">
+	<li>Compartilhar: </li>
 	<?php $imagem = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), '' ); ?>
 	<li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
 	<li><a href="https://twitter.com/home?status=<?php the_title(); echo '%0a'; bloginfo('name'); echo '%0a'; echo gera_url_encurtada(get_the_permalink()); ?>" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
