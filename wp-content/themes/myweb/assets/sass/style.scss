@@ -454,6 +454,8 @@ p, p * {
 	padding: 0;
 	margin-bottom: 60px;
 	display: block;
+	overflow: hidden;
+	width: 100%;
 
 	.slide-sobre {
 		display: block;
@@ -1193,6 +1195,7 @@ p, p * {
 		text-align: center;
 		margin-bottom: 30px;
 		width: 100%;
+		overflow: hidden;
 		display: block;
 		@include clear;
 
@@ -1201,21 +1204,55 @@ p, p * {
 			margin-bottom: 20px;
 		}
 
-		li {
+		.owl-item {
 			float: left;
-			width: 12.5%;
 			margin: 0;
 			padding: 0;
+			overflow: hidden;
 
 			a {
 				display: block;
 				width: 100%;
 
 				img {
-					max-width: 100%;
+					width: 100%;
 					vertical-align: middle;
 				}
 			}
+		}
+
+		.owl-nav {
+			display: none;
+		}
+
+		.owl-dots {
+		    text-align: center;
+		    margin-top: 20px;
+			width: 100%;
+			float: left;
+			padding: 0 20px;
+			@include box-sizing();
+		    @include clear();
+		}
+
+		.owl-dots .owl-dot {
+		    display: inline-block;
+		    zoom: 1;
+		    cursor: pointer;
+		}
+
+		.owl-dots .owl-dot span {
+		    display: block;
+		    width: 10px;
+		    height: 10px;
+		    margin: 5px 6px;
+		    opacity: 1;
+		    background-color: #d5d5d5;
+		    border-radius: 50%;
+		}
+
+		.owl-dots .owl-dot.active span {
+		    background-color: #a24e4e;
 		}
 	}
 }
