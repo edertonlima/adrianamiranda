@@ -1462,7 +1462,7 @@ function the_archive_title( $before = '', $after = '' ) {
 function get_the_archive_title() {
 	if ( is_category() ) {
 		/* translators: Category archive title. 1: Category name */
-		$title = sprintf( __( '%s' ), single_cat_title( '', false ) );
+		$title = sprintf( __( 'Category: %s' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
 		/* translators: Tag archive title. 1: Tag name */
 		$title = sprintf( __( 'Tag: %s' ), single_tag_title( '', false ) );
@@ -1500,7 +1500,7 @@ function get_the_archive_title() {
 		}
 	} elseif ( is_post_type_archive() ) {
 		/* translators: Post type archive title. 1: Post type name */
-		$title = sprintf( __( '%s' ), post_type_archive_title( '', false ) );
+		$title = sprintf( __( 'Archives: %s' ), post_type_archive_title( '', false ) );
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
 		/* translators: Taxonomy term archive title. 1: Taxonomy singular name, 2: Current taxonomy term */
