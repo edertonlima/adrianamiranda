@@ -105,12 +105,35 @@
 		$('.menu-mobile').click(function(){
 			if($(this).hasClass('active')){
 				$(this).removeClass('active');
-				$('.nav').css('top','-100vh');
-				$('.submenu').hide();
+				$('.menu').removeClass('active');
+				$('.submenu').removeClass('active');
+				$('.submenu ul').removeClass('active');
 			}else{
 				$(this).addClass('active');
-				$('.nav').css('top','0');
+				$('.menu').addClass('active');
 			}
+		});
+
+		$('.submenu').click(function(){
+			if($(this).hasClass('active')){
+				$(this).removeClass('active');
+				$('ul',this).removeClass('active');
+			}else{
+				$(this).addClass('active');
+				$('ul',this).addClass('active');
+			}
+		});
+
+		$('.ultimos h3').click(function(){
+			$(this).parent().find('.item').toggle();
+		});
+
+		$('.sobre h3').click(function(){
+			$(this).parent().find('.sobre-home').toggle();
+		});
+
+		$('.categorias h3').click(function(){
+			$(this).parent().find('ul').toggle();
 		});
 
 	});	
@@ -120,14 +143,29 @@
 </head>
 <body <?php body_class(); ?>>
 
+<?php // /* PRODUÇÃO ?>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-77379812-1', 'auto');
+	  //ga('create', 'UA-91806157-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+<?php // PRODUÇÃO */ ?>
+
 	<header class="header">
 		<nav class="nav">
 			<div class="container">
+				<a href="javascript:" class="menu-mobile"><span><em>X</em></span></a>
 				<ul class="menu">
 
 					<?php $page = get_page_by_path('home'); ?>
 					<li class="<?php if(is_page($page->ID)){ echo 'ativo'; } ?>"><a href="<?php echo get_home_url(); ?>" title="HOME">HOME</a></li>
-					<li class="<?php if(is_category()){ echo 'ativo'; } ?>">
+					<li class="submenu <?php if(is_category()){ echo 'ativo'; } ?>">
 						<a href="javascript:" title="">CATEGORIAS <i class="fa fa-angle-down"></i></a>
 
 						<ul>
@@ -162,8 +200,8 @@
 					<?php $page = get_page_by_path('sobre-mim'); ?>
 					<li class="<?php if(is_page($page->ID)){ echo 'ativo'; } ?>"><a href="<?php echo get_page_link($page->ID); ?>" title="<?php echo get_the_title($page->ID); ?>"><?php echo get_the_title($page->ID); ?></a></li>
 
-					<?php $page = get_page_by_path('na-midia'); ?>
-					<li class="<?php if(is_page($page->ID)){ echo 'ativo'; } ?>"><a href="<?php echo get_page_link($page->ID); ?>" title="<?php echo get_the_title($page->ID); ?>"><?php echo get_the_title($page->ID); ?></a></li>
+					<?php /*$page = get_page_by_path('na-midia'); ?>
+					<li class="<?php if(is_page($page->ID)){ echo 'ativo'; } ?>"><a href="<?php echo get_page_link($page->ID); ?>" title="<?php echo get_the_title($page->ID); ?>"><?php echo get_the_title($page->ID); ?></a></li>*/?>
 
 					<?php $page = get_page_by_path('contato'); ?>
 					<li class="<?php if(is_page($page->ID)){ echo 'ativo'; } ?>"><a href="<?php echo get_page_link($page->ID); ?>" title="<?php echo get_the_title($page->ID); ?>"><?php echo get_the_title($page->ID); ?></a></li>

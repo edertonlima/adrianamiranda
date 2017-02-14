@@ -253,7 +253,7 @@ function my_custom_fonts() {
 	#the-list #post-65, 
 	.taxonomy-category .form-field.term-parent-wrap 
 	{
-		display: none!important;
+		/*display: none!important;*/
 	}
   </style>';
 }

@@ -43,7 +43,7 @@
 				            'post_status' => 'any',
 				            'orderby'     => date,
 				            'order'       => 'DESC',
-				            'posts_per_page' => '5',
+				            'posts_per_page' => '5'
 				        );
 				        $posts = new WP_Query( $getPosts );
 				        if(count($posts) > 0){
@@ -92,11 +92,11 @@
 			</div>
 
 			<div class="row">
-				<div class="col-6">
+				<div class="col-6 copy-footer">
 					<p class="copy"><strong><i class="fa fa-copyright" aria-hidden="true"></i> <?php bloginfo( 'name' ); ?>.</strong> TODOS OS DIREITOS RESERVADOS.</p>
 				</div>
 
-				<div class="col-6">
+				<div class="col-6 copy-footer">
 					<p class="dev">Desenvolvido por <a href="http://www.acapu.ppg.br" target="_blank">Acapú Comunicação e Mídia</a></p>
 				</div>
 			</div>

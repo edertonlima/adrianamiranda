@@ -4,7 +4,7 @@
 	<div class="container">
 
 		<div class="row">
-			<div class="col-8">
+			<div class="col-8 content-page">
 
 				<?php while ( have_posts() ) : the_post();
 
@@ -22,7 +22,7 @@
 				<?php endwhile; ?>
 
 			</div>
-			<div class="col-4">
+			<div class="col-4 content-sidebar">
 				<?php include 'sidebar.php'; ?>
 			</div>
 		</div>

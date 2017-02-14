@@ -11,7 +11,7 @@
 		</header><!-- .page-header -->
 
 		<div class="row">
-			<div class="col-8">
+			<div class="col-8 content-page">
 				
 				<?php if ( have_posts() ) :
 
@@ -32,7 +32,7 @@
 				endif; ?>
 
 			</div>
-			<div class="col-4">
+			<div class="col-4 content-sidebar">
 				<?php include 'sidebar.php'; ?>
 			</div>
 		</div>

@@ -21,7 +21,8 @@
             'post_type'   => 'post',
             'post_status' => 'any',
             'orderby'     => date,
-            'order'       => 'DESC'
+            'order'       => 'DESC',
+            'posts_per_page' => '12'
         );
         $posts = new WP_Query( $getPosts );
         if(count($posts) > 0){ ?>

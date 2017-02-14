@@ -4,7 +4,7 @@
 	<div class="container">
 
 		<div class="row">
-			<div class="col-8">
+			<div class="col-8 content-page">
 
 				<article class="post">
 
@@ -23,7 +23,7 @@
 				</article>
 
 			</div>
-			<div class="col-4">
+			<div class="col-4 content-sidebar">
 				<?php include 'sidebar.php'; ?>
 			</div>
 		</div>
