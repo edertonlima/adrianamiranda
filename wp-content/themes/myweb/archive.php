@@ -21,9 +21,9 @@
 
 					// Previous/next page navigation.
 					the_posts_pagination( array(
-						'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
-						'next_text'          => __( 'Next page', 'twentyfifteen' ),
-						'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
+						'prev_text'          => __( '<i class="fa fa-angle-left" aria-hidden="true"></i>', 'twentyfifteen' ),
+						'next_text'          => __( '<i class="fa fa-angle-right" aria-hidden="true"></i>', 'twentyfifteen' ),
+						'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( '', 'twentyfifteen' ) . ' </span>',
 					) );
 
 				else :

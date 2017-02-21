@@ -1748,3 +1748,37 @@ p, p * {
 		}
 	}
 }
+
+.navigation {
+	margin-top: 20px;
+	display: block;
+
+	h2 {
+		display: none;
+	}
+
+	.nav-links {
+		text-align: center;
+
+		.prev, .next {
+			float: none;
+			display: inline-block;
+		}
+
+		a, span.current {
+			float: none;
+			width: 30px;
+			border: 1px solid #727272;
+			height: 30px;
+			display: inline-block;
+			line-height: 30px;
+			text-align: center;
+		}
+
+		span.current, a:hover {
+			background-color: #a24e4e;
+			color: #ffffff;
+			border-color: #a24e4e;
+		}
+	}
+}
