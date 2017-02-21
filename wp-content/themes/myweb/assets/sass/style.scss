@@ -370,7 +370,7 @@ p, p * {
 					}
 				}
 
-				&.ativo {
+				&.active {
 					& > a, & > a i {
 						color: $destaque;
 					}
@@ -460,6 +460,12 @@ p, p * {
 
 					a {
 						padding: 12px 15px;
+					}
+
+					&:hover, &.active {
+						ul {
+							display: block;
+						}
 					}
 				}
 			}
@@ -1720,5 +1726,25 @@ p, p * {
 
 	.dev {
 		text-align: right;
+	}
+}
+
+
+
+.submenu {
+	@media all and (min-width: 1051px){
+		&:hover {
+			ul {
+				display: block!important;
+			}
+		}
+	}
+
+	@media all and (max-width: 1051px){
+		ul {
+			&.active {
+				display: block!important;
+			}
+		}
 	}
 }

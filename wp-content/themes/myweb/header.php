@@ -138,6 +138,13 @@
 
 	});	
 
+	$(window).resize(function(){
+		$('.menu').removeClass('active');
+		$('.submenu').removeClass('active');
+		$('.menu-mobile').removeClass('active');
+		$('ul').removeClass('active');
+	});
+
 </script>
 
 </head>
